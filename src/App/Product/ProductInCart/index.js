@@ -1,14 +1,18 @@
 import {
-  ProductBox,
+  Product,
   Title,
   QuantityInput,
   ControlButtons,
   ControlButton,
-} from "../../theme/Product/Product";
+} from "../shared/Product";
 
-const ProductInCart = (product, handleQuantityChange, handleRemoveFromCart) => {
+export const ProductInCart = (
+  product,
+  handleQuantityChange,
+  handleRemoveFromCart
+) => {
   return (
-    <ProductBox key={product.title}>
+    <Product key={product.title}>
       <img src={product.image} alt={product.title} />
       <Title>{product.title}</Title>
       <QuantityInput
@@ -24,8 +28,6 @@ const ProductInCart = (product, handleQuantityChange, handleRemoveFromCart) => {
         </ControlButton>
       </ControlButtons>
       <p>{(product.singleUnitPrice * product.quantity).toFixed(2)}$</p>
-    </ProductBox>
+    </Product>
   );
 };
-
-export default ProductInCart;

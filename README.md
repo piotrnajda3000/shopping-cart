@@ -3,5 +3,3 @@
 [Live link](https://www.piotrnajda3000.github.io/shopping-cart)
 
 ## TODO
-
-Implement mobile design.

@@ -1,20 +1,20 @@
 import {
-  ProductBox,
+  Product,
   Title,
   QuantityInput,
   ControlButtons,
   ControlButton,
   Cancel,
-} from "../../theme/Product/Product";
+} from "../shared/Product";
 
-const ProductClicked = (
+export const ProductClicked = (
   product,
   handleCancel,
   handleAddToCart,
   handleQuantityChange
 ) => {
   return (
-    <ProductBox key={product.title}>
+    <Product key={product.title}>
       <img src={product.image} alt={product.title} />
       <Title>{product.title}</Title>
       <QuantityInput
@@ -31,8 +31,6 @@ const ProductClicked = (
         <Cancel onClick={() => handleCancel(product.id)}>Cancel</Cancel>
       </ControlButtons>
       <p>{(product.singleUnitPrice * product.quantity).toFixed(2)}$</p>
-    </ProductBox>
+    </Product>
   );
 };
-
-export default ProductClicked;
