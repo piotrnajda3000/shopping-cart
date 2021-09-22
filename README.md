@@ -1,5 +1,5 @@
 # Shopping Cart
 
-[Live link](https://www.piotrnajda3000.github.io/shopping-cart)
+[Live link](https://piotrnajda3000.github.io/shopping-cart/)
 
 ## TODO
