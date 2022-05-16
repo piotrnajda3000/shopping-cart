@@ -1,7 +1,8 @@
 import ExpandMoreTwoToneIcon from "@material-ui/icons/ExpandMoreTwoTone";
-import { CartToggle } from "../shared/CartToggle";
-import { CartLink } from "../shared/CartLink";
-import { CartAmount } from "../shared/CartAmount";
+
+import { CartToggle } from "./CartToggle.styled";
+import { CartLink } from "./CartLink.styled";
+import { CartAmount } from "./CartAmount.styled";
 
 export const CartBar = ({ cart }) => {
   if (cart === null) {

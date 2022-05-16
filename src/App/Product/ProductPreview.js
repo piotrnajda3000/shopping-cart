@@ -1,4 +1,4 @@
-import { Product, Title } from "../shared/Product";
+import { Product, Title } from "./Product.styled";
 
 export const ProductPreview = (product, handleClick) => {
   return (

@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import { useState } from "react";
 
-import { headphones, speakers } from "../../shared/data/products.js";
+import { headphones, speakers } from "../shared/data/data-products.js";
 
-import { Home } from "../Home";
 import { Catalog } from "../Catalog";
-import { Cart } from "../Cart";
+
+import { Home } from "./Home";
+import { Cart } from "./Cart/Cart";
 
 import { ThemeProvider } from "styled-components";
-import { theme, invertTheme } from "../../shared/theme/theme";
-import GlobalStyle from "../../shared/theme/GlobalStyle";
+import { theme, invertTheme } from "../shared/theme/theme";
+import GlobalStyle from "../shared/theme/GlobalStyle";
 
 export const Routes = () => {
   const [cart, setCart] = useState([]);

@@ -4,12 +4,14 @@ import {
   QuantityInput,
   ControlButtons,
   ControlButton,
-} from "../shared/Product";
+  Cancel,
+} from "./Product.styled";
 
-export const ProductInCart = (
+export const ProductClicked = (
   product,
-  handleQuantityChange,
-  handleRemoveFromCart
+  handleCancel,
+  handleAddToCart,
+  handleQuantityChange
 ) => {
   return (
     <Product key={product.title}>
@@ -23,9 +25,10 @@ export const ProductInCart = (
         max="9"
       />
       <ControlButtons>
-        <ControlButton onClick={() => handleRemoveFromCart(product)}>
-          Remove from Cart
+        <ControlButton onClick={() => handleAddToCart(product)}>
+          Add To Cart
         </ControlButton>
+        <Cancel onClick={() => handleCancel(product.id)}>Cancel</Cancel>
       </ControlButtons>
       <p>{(product.singleUnitPrice * product.quantity).toFixed(2)}$</p>
     </Product>

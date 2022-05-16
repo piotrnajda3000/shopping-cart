@@ -1,7 +1,7 @@
-import { ProductPreview } from "../Product/ProductPreview";
-import { ProductClicked } from "../Product/ProductClicked";
+import { ProductPreview } from "./App/Product/ProductPreview";
+import { ProductClicked } from "./App/Product/ProductClicked";
 
-import { ResponsiveLayout } from "../ResponsiveLayout";
+import { ResponsiveLayout } from "./App/ResponsiveLayout";
 
 export const Catalog = ({
   products,

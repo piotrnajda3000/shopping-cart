@@ -1,12 +1,9 @@
-import styled from "styled-components";
-import { Nav } from "../shared/Nav";
 import { NavLink } from "react-router-dom";
 
-interface MainNavProps {
-  children: JSX.Element | JSX.Element[];
-}
+import styled from "styled-components";
+import { Nav } from "./Nav.styled";
 
-export const MainNav = function ({ children }: MainNavProps) {
+export const MainNav = function ({ children }) {
   return (
     <StyledMainNav>
       <li>

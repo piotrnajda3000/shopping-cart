@@ -1,14 +1,14 @@
 import uniqid from "uniqid";
 
-import hd600 from "../assets/hd600.jpg";
-import ad700x from "../assets/ad700x.jpg";
-import dt1770pro from "../assets/dt1770pro.JPG";
-import kefls50 from "../assets/kefls50.jpg";
-import aria926 from "../assets/aria926.jpg";
-import hd600x from "../assets/hd600x.jpg";
-import utopia from "../assets/utopia.jpeg";
-import portapro from "../assets/portapro.jpeg";
-import he400 from "../assets/he400.jpeg";
+import hd600 from "./hd600.jpg";
+import ad700x from "./ad700x.jpg";
+import dt1770pro from "./dt1770pro.JPG";
+import kefls50 from "./kefls50.jpg";
+import aria926 from "./aria926.jpg";
+import hd600x from "./hd600x.jpg";
+import utopia from "./utopia.jpeg";
+import portapro from "./portapro.jpeg";
+import he400 from "./he400.jpeg";
 
 const headphones = [
   {

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { Nav } from "../shared/Nav";
+import { Nav } from "./Nav.styled";
 
 export const CategoryNav = ({ bottombar, children }) => {
   return (

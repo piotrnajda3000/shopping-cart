@@ -1,13 +1,14 @@
-import { useScreenType } from "../../shared/custom-hooks/useScreenType";
+import { useScreenType } from "../shared/useScreenType";
 
-import { OverflowWrapper } from "../../shared/OverflowWrapper";
-import { CategoryNav } from "../Nav/CategoryNav";
-import { View } from "../../shared/View";
-import { StickyNav } from "../StickyNav";
+import { OverflowWrapper } from "../shared/OverflowWrapper.styled";
+import { View } from "../shared/View.styled";
 
 import { NavLink, useRouteMatch } from "react-router-dom";
-import { MainNav } from "../Nav/MainNav";
-import { CartBar } from "../Cart/CartBar";
+import { CategoryNav } from "./Nav/CategoryNav";
+import { StickyNav } from "./Nav/StickyNav";
+import { MainNav } from "./Nav/MainNav";
+
+import { CartBar } from "./Cart/CartBar";
 
 import { Link } from "react-router-dom";
 import HeadsetOutlinedIcon from "@material-ui/icons/HeadsetOutlined";

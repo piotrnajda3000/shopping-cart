@@ -1,4 +1,4 @@
-import { ResponsiveLayout } from "../ResponsiveLayout";
+import { ResponsiveLayout } from "./ResponsiveLayout";
 
 export const Home = () => {
   return (
