@@ -6,6 +6,6 @@ Extra features not included in the brief:
 
 - UI designed by me 
 - a simple responsive layout built with React hooks and styled-components
-- day & night theme switch implementation  
+- day & night theme 
 
 *[Live link](https://piotrnajda3000.github.io/shopping-cart/)* 
