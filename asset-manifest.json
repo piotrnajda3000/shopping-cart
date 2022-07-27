@@ -1,26 +1,17 @@
 {
   "files": {
-    "main.js": "/shopping-cart/static/js/main.f438d1c1.chunk.js",
-    "main.js.map": "/shopping-cart/static/js/main.f438d1c1.chunk.js.map",
-    "runtime-main.js": "/shopping-cart/static/js/runtime-main.e2f9aa8b.js",
-    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.e2f9aa8b.js.map",
-    "static/js/2.21e3ad64.chunk.js": "/shopping-cart/static/js/2.21e3ad64.chunk.js",
-    "static/js/2.21e3ad64.chunk.js.map": "/shopping-cart/static/js/2.21e3ad64.chunk.js.map",
+    "main.js": "/shopping-cart/static/js/main.dd90de80.js",
+    "static/media/ad700x.jpg": "/shopping-cart/static/media/ad700x.149b1f58b093aab758be.jpg",
+    "static/media/utopia.jpeg": "/shopping-cart/static/media/utopia.7ac16599bedfeba42721.jpeg",
+    "static/media/portapro.jpeg": "/shopping-cart/static/media/portapro.5f58c3d59646b57dfb06.jpeg",
+    "static/media/aria926.jpg": "/shopping-cart/static/media/aria926.29cc9fc7b31a229dec31.jpg",
+    "static/media/hd600x.jpg": "/shopping-cart/static/media/hd600x.697b1f0da8396d5db5d0.jpg",
+    "static/media/he400.jpeg": "/shopping-cart/static/media/he400.2068570e836d471adc33.jpeg",
+    "static/media/kefls50.jpg": "/shopping-cart/static/media/kefls50.09171570f7d6d582f9e0.jpg",
     "index.html": "/shopping-cart/index.html",
-    "static/js/2.21e3ad64.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.21e3ad64.chunk.js.LICENSE.txt",
-    "static/media/ad700x.149b1f58.jpg": "/shopping-cart/static/media/ad700x.149b1f58.jpg",
-    "static/media/aria926.29cc9fc7.jpg": "/shopping-cart/static/media/aria926.29cc9fc7.jpg",
-    "static/media/dt1770pro.186bba66.JPG": "/shopping-cart/static/media/dt1770pro.186bba66.JPG",
-    "static/media/hd600.bc3d432e.jpg": "/shopping-cart/static/media/hd600.bc3d432e.jpg",
-    "static/media/hd600x.697b1f0d.jpg": "/shopping-cart/static/media/hd600x.697b1f0d.jpg",
-    "static/media/he400.2068570e.jpeg": "/shopping-cart/static/media/he400.2068570e.jpeg",
-    "static/media/kefls50.09171570.jpg": "/shopping-cart/static/media/kefls50.09171570.jpg",
-    "static/media/portapro.5f58c3d5.jpeg": "/shopping-cart/static/media/portapro.5f58c3d5.jpeg",
-    "static/media/utopia.7ac16599.jpeg": "/shopping-cart/static/media/utopia.7ac16599.jpeg"
+    "main.dd90de80.js.map": "/shopping-cart/static/js/main.dd90de80.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.e2f9aa8b.js",
-    "static/js/2.21e3ad64.chunk.js",
-    "static/js/main.f438d1c1.chunk.js"
+    "static/js/main.dd90de80.js"
   ]
 }
