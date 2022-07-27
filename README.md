@@ -9,3 +9,4 @@
 - Landing page
 - Theming with styled-components
 - Optimize: animations, make use of useCallback & useMemo
+- Add tests 
