@@ -15,6 +15,7 @@ export default function NavDesktop({ links }) {
       <div className={`links`}>
         {links.map((link) => (
           <Link
+            key={link.to}
             to={link.to}
             css={`
               ${flexHorizontal(2)};

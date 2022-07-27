@@ -69,7 +69,7 @@ export default function ProductDetails() {
           src={image}
           alt={title}
           css={`
-            max-width: 400px;
+            max-width: calc(100% + ${RELATIVE_PADDING} * 2);
             aspect-ratio: 4/5;
             object-fit: cover;
             border-radius: 10px;
