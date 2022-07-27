@@ -1,6 +1,4 @@
-import hd600 from "./headphones/hd600.jpg";
 import ad700x from "./headphones/ad700x.jpg";
-import dt1770pro from "./headphones/dt1770pro.JPG";
 import hd600x from "./headphones/hd600x.jpg";
 import utopia from "./headphones/utopia.jpeg";
 import portapro from "./headphones/portapro.jpeg";
@@ -20,9 +18,9 @@ export function getProduct(category, id) {
 const products = {
   headphones: [
     {
-      title: "Sennheiser HD600",
-      singleUnitPrice: 286.99,
-      image: hd600,
+      title: "Koss Porta Pro Black",
+      singleUnitPrice: 49.99,
+      image: portapro,
       id: 1,
     },
     {
@@ -32,34 +30,22 @@ const products = {
       id: 2,
     },
     {
-      title: "Beyerdynamic DT1770 Pro",
-      singleUnitPrice: 499.99,
-      image: dt1770pro,
-      id: 3,
-    },
-    {
       title: "Sennheiser HD600x",
       singleUnitPrice: 220.99,
       image: hd600x,
-      id: 4,
+      id: 3,
     },
     {
       title: "Focal Utopia",
       singleUnitPrice: 3999.99,
       image: utopia,
-      id: 5,
-    },
-    {
-      title: "Koss Porta Pro Black",
-      singleUnitPrice: 49.99,
-      image: portapro,
-      id: 6,
+      id: 4,
     },
     {
       title: "Hifiman HE-400I Planar",
       singleUnitPrice: 399.99,
       image: he400,
-      id: 7,
+      id: 5,
     },
   ],
   speakers: [
@@ -67,13 +53,13 @@ const products = {
       title: "KEF LS50 Wireless II",
       singleUnitPrice: 2499.99,
       image: kefls50,
-      id: 8,
+      id: 6,
     },
     {
       title: "Focal Aria 926",
       singleUnitPrice: 1599.99,
       image: aria926,
-      id: 9,
+      id: 7,
     },
   ],
 };

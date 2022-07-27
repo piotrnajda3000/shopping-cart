@@ -3,7 +3,6 @@ import { createGlobalStyle } from "styled-components/macro";
 import base from "./_base";
 
 const GlobalStyle = createGlobalStyle`
-
   ${base} 
 
   * {
@@ -13,6 +12,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: ${(p) => p.theme.colors.background};
+    max-width: 1366px;
+    margin: auto;
   }
 
 `;

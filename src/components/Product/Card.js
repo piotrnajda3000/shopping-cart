@@ -1,5 +1,9 @@
 import { css } from "styled-components/macro";
 import { Link, useLocation } from "react-router-dom";
+import { elevation } from "../../styles/mixins";
+
+export const RELATIVE_PADDING = `clamp(8px, 3vw, 16px)`;
+export const NEGATIVE_MARGIN = `clamp(-16px, -3vw, -8px)`;
 
 const ProductCard = ({ product }) => {
   const { title, singleUnitPrice, image, id } = product;
@@ -9,11 +13,13 @@ const ProductCard = ({ product }) => {
     <Link to={`${pathname}/${id}`}>
       <div
         css={`
-          padding: 16px;
-          border: 1px solid black;
           display: flex;
           flex-direction: column;
           gap: 4px;
+          padding: ${RELATIVE_PADDING};
+          border-radius: 10px;
+          background: white;
+          ${elevation("light")};
         `}
       >
         <div>{title}</div>
@@ -21,8 +27,11 @@ const ProductCard = ({ product }) => {
         <img
           src={image}
           css={`
-            width: 300px;
-            height: 300px;
+            border-radius: 10px;
+            margin-left: ${NEGATIVE_MARGIN};
+            margin-right: ${NEGATIVE_MARGIN};
+            margin-bottom: ${NEGATIVE_MARGIN};
+            aspect-ratio: 4 / 5;
             object-fit: cover;
           `}
         />

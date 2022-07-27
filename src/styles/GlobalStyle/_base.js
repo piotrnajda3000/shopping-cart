@@ -6,11 +6,23 @@ const base = css`
     font-size: 100%;
   }
 
+  /* html,
+  body,
+  #root {
+    min-height: 100vh; // or 100vh?
+  } */
+
   html,
   body,
   #root {
-    min-height: 100%; // or 100vh?
+    min-height: 100vh;
   }
+  /* 
+  html,
+  body,
+  #root {
+    min-height: 100vh;
+  } */
 
   *,
   *::before,

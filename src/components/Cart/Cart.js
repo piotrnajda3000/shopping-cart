@@ -1,34 +1,39 @@
-import produce from "immer";
 import React, { useContext, useEffect } from "react";
 import { css } from "styled-components/macro";
-import Spacer from "../../styles/components/Spacer";
 import { CartContext } from "./withCart";
+import { elevation } from "../../styles/mixins";
 
 import useQuantity from "../hooks/useQuantity";
+import { mdiCartRemove } from "@mdi/js";
+
+import SIcon from "../../styles/components/SIcon";
+
+import { NAV_HEIGHT } from "../Nav";
 
 export default function Cart() {
   const { cart } = useContext(CartContext);
 
   return (
-    <>
-      <Spacer size="16" />
-      <div
-        css={`
-          display: flex;
-          flex-wrap: wrap;
-          gap: 16px;
-        `}
-      >
-        {cart.map((product) => (
-          <ProductInCart key={product.id} product={product} />
-        ))}
-      </div>
-    </>
+    <div
+      css={`
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        padding: clamp(8px, 3vw, 16px);
+        min-height: calc(100vh - ${NAV_HEIGHT}px);
+      `}
+    >
+      {cart.map((product) => (
+        <ProductInCart key={product.id} product={product} />
+      ))}
+    </div>
   );
 }
 
 const ProductInCart = ({ product }) => {
-  const { cartAPI, cart, dispatch } = useContext(CartContext);
+  const { dispatch } = useContext(CartContext);
 
   const [quantity, handleQuantityChange] = useQuantity(1, product.quantity);
 
@@ -38,59 +43,91 @@ const ProductInCart = ({ product }) => {
 
   const handleUpdateProduct = (product) => {
     dispatch({ type: "UPDATE_QUANTITY", product, quantity });
-
-    // const updatedProduct = produce(product, (draft) => {
-    //   draft.quantity = quantity;
-    // });
-
-    // setCart(
-    //   produce((draft) => {
-    //     draft[cartAPI.getProductIdx(product)] = updatedProduct;
-    //   })
-    // );
   };
 
   return (
     <div
-      key={product.id}
       css={`
+        width: fit-content;
         display: flex;
-        gap: 4px;
+        align-items: center;
+        justify-content: center;
         flex-direction: column;
-        max-width: fit-content;
+        gap: 16px;
       `}
     >
-      <div>{product.title}</div>
-      <div>{product.singleUnitPrice}$</div>
-      <img
-        src={product.image}
+      <div
         css={`
-          width: 300px;
-          height: 300px;
-          object-fit: cover;
-          border: 1px solid black;
+          max-width: 300px;
+          padding: clamp(8px, 3vw, 16px);
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          ${elevation("light")};
+          background: white;
         `}
-      />
+      >
+        <div>{product.title}</div>
+        <div>{Math.round(quantity * product.singleUnitPrice * 100) / 100}$</div>
+        <img
+          src={product.image}
+          css={`
+            flex: 1;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-left: clamp(-16px, -3vw, -8px);
+            margin-right: clamp(-16px, -3vw, -8px);
+            margin-bottom: clamp(-16px, -3vw, -8px);
+          `}
+        />
+      </div>
       <div
         css={`
           display: flex;
-          gap: 4px;
+          gap: 10px;
+          max-width: 300px;
+          width: 100%;
         `}
       >
         <input
           type="number"
           value={quantity}
           onChange={handleQuantityChange}
-          min="1"
-          max="5"
           id="quantity"
           css={`
             width: 44px;
+            text-align: center;
+            border: 1px solid hsl(272, 50%, 67%);
+            border-radius: 4px;
           `}
         ></input>
-        <button>Remove from cart</button>
+        <button
+          onClick={() => dispatch({ type: "REMOVE_FROM_CART", id: product.id })}
+          css={`
+            background-color: ${(p) => p.theme.colors.primary};
+            border: 0;
+            border-radius: 4px;
+            padding-inline: 16px;
+            padding-block: 8px;
+            color: white;
+            cursor: pointer;
+            flex: 1;
+            display: flex;
+          `}
+        >
+          <SIcon path={mdiCartRemove} $light size="18px" />
+          <span
+            css={`
+              display: inline-block;
+              margin: auto;
+            `}
+          >
+            Remove from cart
+          </span>
+        </button>
       </div>
-      <div>Total: {quantity * product.singleUnitPrice}</div>
     </div>
   );
 };

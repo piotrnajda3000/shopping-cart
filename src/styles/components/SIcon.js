@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 
 import { Icon as I } from "@mdi/react";
 
-const $Icon = styled(I).attrs((p) => ({
+const SIcon = styled(I).attrs((p) => ({
   size: p.size || 1,
 }))`
   color: ${(p) =>
