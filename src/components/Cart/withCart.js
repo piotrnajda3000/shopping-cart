@@ -1,6 +1,6 @@
 import produce, { original } from "immer";
-import React, { useEffect } from "react";
 import { useImmerReducer } from "use-immer";
+import React from "react";
 
 export const CartContext = React.createContext(null);
 

@@ -27,7 +27,7 @@ const useDropdown = (sidebarClose) => {
   React.useEffect(() => {
     window.addEventListener("mousedown", closeOpenDropdown);
     return () => {
-      window.removeEventListener("mouedown", closeOpenDropdown);
+      window.removeEventListener("mousedown", closeOpenDropdown);
     };
   }, [dropdown]);
 

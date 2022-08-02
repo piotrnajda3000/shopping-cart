@@ -5,12 +5,12 @@ export const categories = [
     name: "Audio",
     links: [
       {
-        to: "/catalog/headphones",
+        to: "/headphones",
         text: "Headphones",
         icon: mdiHeadphones,
       },
       {
-        to: "/catalog/speakers",
+        to: "/speakers",
         text: "Speakers",
         icon: mdiSpeaker,
       },
@@ -20,7 +20,7 @@ export const categories = [
     name: "Artworks",
     links: [
       {
-        to: "/catalog/paintings",
+        to: "/paintings",
         text: "Paintings",
         icon: mdiBrush,
       },

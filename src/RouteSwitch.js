@@ -8,9 +8,10 @@ import Cart from "./components/Cart/Cart";
 import App from "./App";
 import Home from "./components/Home";
 
-import ProductCatalog from "./components/Product/Catalog";
 import ProductCategory from "./components/Product/Category";
 import ProductDetails from "./components/Product/Details";
+
+import Paintings from "./components/Paintings";
 
 const RouteSwitch = () => {
   return (
@@ -18,10 +19,9 @@ const RouteSwitch = () => {
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="catalog" element={<ProductCatalog />}>
-            <Route path=":category" element={<ProductCategory />} />
-            <Route path=":category/:itemId" element={<ProductDetails />} />
-          </Route>
+          <Route path="paintings" element={<Paintings />} />
+          <Route path=":category" element={<ProductCategory />} />
+          <Route path=":category/:itemId" element={<ProductDetails />} />
           <Route path="cart" element={<Cart />} />
         </Route>
       </Routes>

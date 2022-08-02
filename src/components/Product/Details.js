@@ -11,7 +11,7 @@ import { mdiCheck } from "@mdi/js";
 import { NAV_HEIGHT } from "../Nav";
 import { NEGATIVE_MARGIN, RELATIVE_PADDING } from "./Card";
 
-export default function ProductDetails() {
+const ProductDetails = () => {
   const [quantity, handleQuantityChange] = useQuantity(1, 1);
 
   const { cartAPI, dispatch } = useContext(CartContext);
@@ -126,4 +126,6 @@ export default function ProductDetails() {
       </div>
     </div>
   );
-}
+};
+
+export default ProductDetails;

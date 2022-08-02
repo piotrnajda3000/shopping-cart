@@ -22,11 +22,7 @@ export default function NavMobile({ links }) {
   };
 
   return (
-    <SNav
-      css={`
-        position: ${sidebar ? "sticky" : "sticky"};
-      `}
-    >
+    <SNav>
       <div className="topBar">
         <Link to="/" className="logo" onClick={sidebarClose}>
           Shopping Cart
@@ -73,6 +69,7 @@ export default function NavMobile({ links }) {
 
 const SNav = styled.nav`
   padding: 8px 16px;
+  position: sticky;
 
   background: white;
   border-bottom: 2px solid #7e22ce;
