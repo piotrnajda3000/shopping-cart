@@ -9,4 +9,6 @@
 - Landing page
 - Theming with styled-components
 - Optimize: animations, make use of useCallback & useMemo
-- Add tests 
+- Add tests
+- Fetching products from either a fake server or a real one (Firebase / Firestore?)
+- Pages, fetch more button in paintings category.

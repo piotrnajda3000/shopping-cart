@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Home() {
-  return <></>;
+  return <>Landing page goes here</>;
 }

@@ -9,6 +9,7 @@ import { mdiCartRemove } from "@mdi/js";
 import SIcon from "../../styles/components/SIcon";
 
 import { NAV_HEIGHT } from "../Nav";
+import { NEGATIVE_MARGIN, RELATIVE_PADDING } from "../Product/Card";
 
 export default function Cart() {
   const { cart } = useContext(CartContext);
@@ -17,11 +18,13 @@ export default function Cart() {
     <div
       css={`
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-        padding: clamp(8px, 3vw, 16px);
+        gap: ${RELATIVE_PADDING};
+        padding: ${RELATIVE_PADDING};
+        grid-template-columns: repeat(auto-fit, 300px);
+        place-content: center;
+        place-items: center;
+        position: relative;
+        z-index: 2;
         min-height: calc(100vh - ${NAV_HEIGHT}px);
       `}
     >
@@ -48,22 +51,21 @@ const ProductInCart = ({ product }) => {
   return (
     <div
       css={`
-        width: fit-content;
         display: flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
         gap: 16px;
+        width: fit-content;
+        align-items: center;
+        justify-content: center;
       `}
     >
       <div
         css={`
-          max-width: 300px;
-          padding: clamp(8px, 3vw, 16px);
-          border-radius: 10px;
           display: flex;
           flex-direction: column;
           gap: 4px;
+          padding: ${RELATIVE_PADDING};
+          border-radius: 10px;
           ${elevation("light")};
           background: white;
         `}
@@ -73,21 +75,19 @@ const ProductInCart = ({ product }) => {
         <img
           src={product.image}
           css={`
-            flex: 1;
+            max-width: calc(100% + ${RELATIVE_PADDING} * 2);
             aspect-ratio: 4 / 5;
             object-fit: cover;
             border-radius: 10px;
-            margin-left: clamp(-16px, -3vw, -8px);
-            margin-right: clamp(-16px, -3vw, -8px);
-            margin-bottom: clamp(-16px, -3vw, -8px);
+            margin-inline: ${NEGATIVE_MARGIN};
+            margin-bottom: ${NEGATIVE_MARGIN};
           `}
         />
       </div>
       <div
         css={`
           display: flex;
-          gap: 10px;
-          max-width: 300px;
+          gap: ${RELATIVE_PADDING};
           width: 100%;
         `}
       >

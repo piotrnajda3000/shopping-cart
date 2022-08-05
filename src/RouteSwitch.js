@@ -11,21 +11,25 @@ import Home from "./components/Home";
 import ProductCategory from "./components/Product/Category";
 import ProductDetails from "./components/Product/Details";
 
-import Paintings from "./components/Paintings";
+import Artworks from "./components/Artworks";
+
+import { ErrorBoundary } from "react-error-boundary";
 
 const RouteSwitch = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-          <Route path="paintings" element={<Paintings />} />
-          <Route path=":category" element={<ProductCategory />} />
-          <Route path=":category/:itemId" element={<ProductDetails />} />
-          <Route path="cart" element={<Cart />} />
-        </Route>
-      </Routes>
-    </Router>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route index element={<Home />} />
+            <Route path="artworks" element={<Artworks />} />
+            <Route path=":category" element={<ProductCategory />} />
+            <Route path=":category/:itemId" element={<ProductDetails />} />
+            <Route path="cart" element={<Cart />} />
+          </Route>
+        </Routes>
+      </Router>
+    </ErrorBoundary>
   );
 };
 
@@ -36,3 +40,12 @@ function pipe(...fns) {
 }
 
 export default pipe(withCart, withTheme)(RouteSwitch);
+
+function ErrorFallback({ error, resetErrorBoundary }) {
+  return (
+    <div>
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+    </div>
+  );
+}

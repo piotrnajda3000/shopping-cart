@@ -41,10 +41,9 @@ const ProductDetails = () => {
     <div
       css={`
         display: grid;
-        gap: 8px;
-        padding: 8px clamp(8px, 3vw, 16px);
-        grid-template-columns: minmax(300px, 400px);
-        grid-auto-rows: min-content;
+        gap: ${RELATIVE_PADDING};
+        padding: ${RELATIVE_PADDING};
+        grid-template-columns: 300px;
         place-content: center;
         place-items: center;
         position: relative;
@@ -70,11 +69,10 @@ const ProductDetails = () => {
           alt={title}
           css={`
             max-width: calc(100% + ${RELATIVE_PADDING} * 2);
-            aspect-ratio: 4/5;
+            aspect-ratio: 4 / 5;
             object-fit: cover;
             border-radius: 10px;
-            margin-left: ${NEGATIVE_MARGIN};
-            margin-right: ${NEGATIVE_MARGIN};
+            margin-inline: ${NEGATIVE_MARGIN};
             margin-bottom: ${NEGATIVE_MARGIN};
           `}
         />
@@ -82,8 +80,7 @@ const ProductDetails = () => {
       <div
         css={`
           display: flex;
-          gap: 10px;
-          max-width: 300px;
+          gap: ${RELATIVE_PADDING};
           width: 100%;
         `}
       >

@@ -40,8 +40,8 @@ const SNav = styled.nav`
   z-index: 4;
 
   ${flexHorizontal(4)};
-  max-width: 1232px;
   margin-inline: auto;
+  max-width: 1366px;
 
   padding: 8px 16px;
 

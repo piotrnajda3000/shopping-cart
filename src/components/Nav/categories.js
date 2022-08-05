@@ -20,8 +20,8 @@ export const categories = [
     name: "Artworks",
     links: [
       {
-        to: "/paintings",
-        text: "Paintings",
+        to: "/artworks",
+        text: "Artworks",
         icon: mdiBrush,
       },
     ],
