@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Artwork from "./Artwork";
 import { motion } from "framer-motion";
 import { css } from "styled-components/macro";
-import { NAV_HEIGHT } from "../../Nav";
 import Masonry from "react-masonry-css";
 import styled from "styled-components/macro";
 import { NEGATIVE_MARGIN, RELATIVE_PADDING } from "../../Product/Card";
 
-function Artworks({ resource }) {
+function Artworks({ resource, fill }) {
   const artworks = resource.read();
+
+  const [prevArtworks, setPrevArtworks] = useState(artworks);
+
+  useEffect(() => {
+    setPrevArtworks(artworks);
+  }, [artworks]);
 
   const parent = {
     show: {
@@ -24,12 +29,13 @@ function Artworks({ resource }) {
 
   return (
     <motion.div
-      initial="hidden"
-      animate="show"
+      initial={prevArtworks[0].id === artworks[0].id ? "hidden" : "show"}
+      animate={prevArtworks[0].id === artworks[0].id ? "show" : "hidden"}
       variants={parent}
       css={`
         padding-top: clamp(8px, 3vw, 16px);
         padding-inline: clamp(8px, 3vw, 16px);
+        ${!fill && "padding-inline: 0;"}
         position: relative;
         z-index: 2;
       `}
@@ -37,7 +43,7 @@ function Artworks({ resource }) {
       <SMasonry className="" breakpointCols={{ default: 3, 1115: 2, 719: 1 }}>
         {artworks.map((artwork) => {
           return (
-            <motion.div key={artwork.id} variants={stat} css={``}>
+            <motion.div key={artwork.id} variants={stat}>
               <Artwork artwork={artwork} />
             </motion.div>
           );
@@ -60,7 +66,6 @@ const SMasonry = styled(Masonry)`
 
   /* Individual item */
   & > div > div {
-    background: grey;
     margin-bottom: ${RELATIVE_PADDING};
   }
 `;

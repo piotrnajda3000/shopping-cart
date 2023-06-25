@@ -25,7 +25,7 @@ export default function NavMobile({ links }) {
     <SNav>
       <div className="topBar">
         <Link to="/" className="logo" onClick={sidebarClose}>
-          Shopping Cart
+          Sight & Sound
         </Link>
         <SidebarToggleButton
           sidebar={sidebar}
@@ -72,7 +72,7 @@ const SNav = styled.nav`
   position: sticky;
 
   background: white;
-  border-bottom: 2px solid #7e22ce;
+  border-bottom: 2px solid hsl(330, 72%, 47%);
 
   top: 0;
   left: 0;
@@ -97,7 +97,7 @@ const SNav = styled.nav`
     right: 0;
     bottom: 0;
     left: 0;
-    background: #7e22ce;
+    background: hsl(330, 72%, 47%);
     transform: translateX(-100%);
     height: 100vh;
 

@@ -40,7 +40,7 @@ const SLink = styled(Link)`
   font-size: 13px;
   padding-block: 16px;
   padding-left: 8px;
-  background: hsl(272, 72%, 54%);
+  background: hsl(330, 72%, 54%);
 `;
 
 const SCategory = styled.div`

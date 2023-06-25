@@ -11,10 +11,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(p) => p.theme.colors.background};
-    max-width: 1366px;
+    background: hsla(0, 0%, 97%, 1);
     margin: auto;
   }
+
+  button[disabled] {
+    cursor: auto;
+  }
+
 
 `;
 

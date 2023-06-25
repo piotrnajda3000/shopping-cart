@@ -10,7 +10,7 @@ export default function NavDesktop({ links }) {
   return (
     <SNav>
       <Link to="/" className="logo">
-        Shopping Cart
+        Sight & Sound
       </Link>
       <div className={`links`}>
         {links.map((link) => (
@@ -41,12 +41,11 @@ const SNav = styled.nav`
 
   ${flexHorizontal(4)};
   margin-inline: auto;
-  max-width: 1366px;
 
   padding: 8px 16px;
 
   background: white;
-  border-bottom: 2px solid #7e22ce;
+  border-bottom: 2px solid hsl(330, 72%, 47%);
   border-top: 0;
 
   .logo {

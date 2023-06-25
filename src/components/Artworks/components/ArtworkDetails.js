@@ -1,42 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { createResource } from "../../suspense";
 
 import { cache } from "../Artworks-container";
-import { Link } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 import { css } from "styled-components/macro";
 import { RELATIVE_PADDING } from "../../Product/Card";
 import { NEGATIVE_MARGIN } from "../../Product/Card";
-import { elevation } from "../../../styles/mixins";
-import { ErrorBoundary } from "react-error-boundary";
 
-const Artwork = ({ artwork }) => {
-  return (
-    <Link
-      to={{
-        pathname: `/artworks/${artwork.id}`,
-      }}
-      state={{ artwork }}
-    >
+import { elevation } from "../../../styles/mixins";
+import { fetchArtworks } from "../Artworks-container";
+import { ErrorBoundary } from "react-error-boundary";
+import Spinner from "../../Spinner";
+
+const ArtworkDetails = () => {
+  const { id } = useParams();
+
+  const location = useLocation();
+
+  const [finalArtwork, setFinalArtwork] = useState(location.state?.artwork);
+
+  useEffect(() => {
+    if (!location.state?.artwork) {
+      fetchArtworks([id]).then((res) => {
+        setFinalArtwork(res[0]);
+      });
+    }
+  }, [location.state?.artwork, id]);
+
+  if (finalArtwork) {
+    return (
       <div
         css={`
           display: flex;
           flex-direction: column;
           gap: ${RELATIVE_PADDING};
           padding: ${RELATIVE_PADDING};
+          margin-bottom: 16px;
           background: white;
           border-radius: 10px;
           ${elevation("light")};
+          margin-top: 16px;
+          max-width: clamp(285px, 75%, 720px);
+          margin-inline: auto;
         `}
       >
-        <p>{artwork.title}</p>
+        <p>{finalArtwork.title}</p>
         <ErrorBoundary
           fallback={<>Sorry! There was an issue loading this image</>}
         >
           <SuspenseImage
-            alt={artwork.title}
-            src={artwork.imageUrl}
+            alt={finalArtwork.title}
+            src={finalArtwork.imageUrl}
             css={`
               margin-left: ${NEGATIVE_MARGIN};
               margin-right: ${NEGATIVE_MARGIN};
@@ -47,8 +63,16 @@ const Artwork = ({ artwork }) => {
           />
         </ErrorBoundary>
       </div>
-    </Link>
-  );
+    );
+  } else {
+    <Spinner
+      css={`
+        position: absolute;
+        top: 50%;
+        transform: translateY(50%);
+      `}
+    />;
+  }
 };
 
 function SuspenseImage(props) {
@@ -76,4 +100,4 @@ function loadImage(source) {
   return resource;
 }
 
-export default Artwork;
+export default ArtworkDetails;

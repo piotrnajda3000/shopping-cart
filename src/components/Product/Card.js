@@ -5,12 +5,15 @@ import { elevation } from "../../styles/mixins";
 export const RELATIVE_PADDING = `clamp(8px, 3vw, 16px)`;
 export const NEGATIVE_MARGIN = `clamp(-16px, -3vw, -8px)`;
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, category }) => {
   const { title, singleUnitPrice, image, id } = product;
   const { pathname } = useLocation();
 
+  const finalCategory = category || pathname;
+  const hasSlash = finalCategory.startsWith("/");
+
   return (
-    <Link to={`${pathname}/${id}`}>
+    <Link to={`${hasSlash ? "" : "/"}${category || pathname}/${id}`}>
       <div
         css={`
           display: flex;

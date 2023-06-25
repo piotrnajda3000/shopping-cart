@@ -8,24 +8,28 @@ import { elevation } from "../../styles/mixins";
 import SIcon from "../../styles/components/SIcon";
 import { mdiCheck } from "@mdi/js";
 
+import { useQuery } from "@tanstack/react-query";
+
 import { NAV_HEIGHT } from "../Nav";
 import { NEGATIVE_MARGIN, RELATIVE_PADDING } from "./Card";
+
+import Spinner from "../Spinner";
 
 const ProductDetails = () => {
   const [quantity, handleQuantityChange] = useQuantity(1, 1);
 
   const { cartAPI, dispatch } = useContext(CartContext);
 
-  const { category, itemId } = useParams();
-  const product = getProduct(category, itemId);
-  const { title, singleUnitPrice, image, id } = product;
+  const { itemId } = useParams();
+
+  const q = useQuery(["products", itemId], () => getProduct(itemId));
 
   const handleAddToCart = (e) => {
     const productInCart = cartAPI.getProduct(id);
     if (productInCart) {
       handleUpdateProductInCart(productInCart);
     } else {
-      dispatch({ type: "ADD_TO_CART", product, quantity });
+      dispatch({ type: "ADD_TO_CART", product: q.data, quantity });
     }
   };
 
@@ -36,6 +40,19 @@ const ProductDetails = () => {
       quantity: parseInt(quantity, 10) + parseInt(productInCart.quantity, 10),
     });
   };
+
+  if (q.isLoading)
+    return (
+      <Spinner
+        css={`
+          position: absolute;
+          top: 50%;
+          transform: translateY(50%);
+        `}
+      />
+    );
+
+  const { title, singleUnitPrice, image, id } = q.data;
 
   return (
     <div

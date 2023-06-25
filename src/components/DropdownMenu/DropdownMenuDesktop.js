@@ -3,8 +3,9 @@ import { elevation, flexHorizontal, flexVertical } from "../../styles/mixins";
 import { css } from "styled-components/macro";
 import styled from "styled-components/macro";
 import CategoryDesktop from "./CategoryDesktop";
-import { mdiMenuDown } from "@mdi/js";
+import { mdiAllInclusive, mdiMenuDown } from "@mdi/js";
 import SIcon from "../../styles/components/SIcon";
+import { Link } from "react-router-dom";
 
 export default function DropdownMenuDesktop({ categories }) {
   const [dropdown, setDropdown] = React.useState(false);
@@ -55,7 +56,7 @@ export default function DropdownMenuDesktop({ categories }) {
             css`
               transform: rotate(180deg);
               transition: all 150ms ease-out;
-              color: #7e22ce;
+              color: hsl(330, 72%, 47%);
             `}
           `}
         />
@@ -63,6 +64,9 @@ export default function DropdownMenuDesktop({ categories }) {
       </button>
       {dropdown ? (
         <div className="openMenu" ref={dropdownRef}>
+          <Link to="/categories" onClick={closeDropdown}>
+            All products
+          </Link>
           {categories.map((category) => (
             <CategoryDesktop
               category={category}
